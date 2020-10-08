@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #022431;
+    background: #C3AED6;
     transition: all 0.5s ease-in-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -20,6 +20,51 @@
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(315deg) translate(7px, -6px); }
 
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(34, 60, 53, 0.397);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    transform: translate3d(0, 100%, 0);
+    background-color: rgba(65, 116, 102, 0.397);
+    transition: all 0.5s ease-in-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 311px;
+      background: url("../imahe/man_hat_cmp.jpg");
+      border: solid 3px rgba(35, 35, 173, 0.705);
+      shape: circle; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+
 * {
   box-sizing: border-box; }
 
@@ -29,7 +74,7 @@ body {
   line-height: 1.6;
   height: 100%;
   margin: 0%;
-  color: rgba(14, 15, 78, 0.842); }
+  color: #e0e1e1; }
   body#bg-img {
     background: url(../imahe/piano_portfolio2.jpg);
     background-attachment: fixed;
@@ -42,7 +87,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(43, 85, 74, 0.7); }
+      background: rgba(65, 116, 102, 0.7); }
 
 h1,
 h2,
@@ -63,9 +108,9 @@ h3 {
 
 a {
   text-decoration: none;
-  color: blueviolet; }
+  color: #C3AED6; }
   a:hover {
-    color: rgba(41, 60, 112, 0.062); }
+    color: lightblue; }
 
 main {
   padding: 2rem;
@@ -75,7 +120,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: rgba(27, 189, 135, 0.842);
+        color: rgba(27, 189, 135, 0.692);
         transition: all 0.5s ease-in-out; }
   main#home {
     overflow: hidden; }

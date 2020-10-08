@@ -1,6 +1,7 @@
+
 $primary-color : rgba(199, 64, 105, 0.692);
 $secondary-color: rgba(41, 60, 112, 0.062);
-$manas-overlay-color : rgba(43, 85, 74, 0.397);
+$manas-overlay-color : rgba(65, 116, 102, 0.397);
 $show-home-image : true;
 $home-image : url(../imahe/piano_portfolio2.jpg);
 $background-opacity : 0.7;
@@ -28,3 +29,13 @@ $background-opacity : 0.7;
         }
     }
 }
+
+//set text color
+@function set-text-color($color){
+    @if (lightness($color) >40){
+        @return #C3AED6;
+    }
+    @else{
+        @return rgb(224,225,225);
+    }
+    }
