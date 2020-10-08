@@ -52,7 +52,6 @@
         width: 50%;
         height: 100vh; //or 100vh which is 100 slices
         overflow: hidden; //cozz we dont want any scroll bars
-
     }
     
     &-nav{
@@ -79,20 +78,49 @@
             //slide in from bottom
             transform: translate3d(0,0,0);
         }
-        .portrait{ //meadns picture of blog author
+        .portrait{ //means picture of blog author
             width:250px;
-            height: 311px;
-            background : url('../imahe/man_hat_cmp.jpg');
-            border: solid  3px rgba(35, 35, 173, 0.705);
-            shape : circle;
+            height: 250px;
+            background : url('../imahe/man_hat_cmp.jpeg');
+            border: solid  3px $primary-color;
+            border-radius: 50%;
         }
     }
+    
     .nav-item{
         transform: translate3d(600px,0,0);
         @include easeOut;
+
         &.show{
             //slide in from right
             transform: translate3d(0,0,0);
         }
+        &.current>a{
+            color: $primary-color;
+        }
     }
-} 
+    .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1 rem 0;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+}
+
+//delay each nav item slide by 0.1s like 
+//for (let x=0;i<4;i++)
+@for $x from 1 through 3{
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.1s;
+    }
+}
+
