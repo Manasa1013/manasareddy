@@ -1,5 +1,6 @@
-@import 'config';
+@import 'config'; 
 @import 'menu';
+@import 'mobile';
 *{
     box-sizing: border-box;
     //color: rgba(14, 15, 78, 0.842);
@@ -28,7 +29,7 @@ h3{
         font-size: 2rem;
         margin-bottom: 0;
         padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color ,2),0.2);
+        background: rgba(lighten($manas-overlay-color ,2),0.2);
     }
 }
 a{

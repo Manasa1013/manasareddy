@@ -30,6 +30,28 @@ $background-opacity : 0.7;
     }
 }
 
+//media queries mixins
+@mixin mediaSm{ //stands for small
+    @media screen and (max-width : 500px) {
+        @content;
+    }
+}
+@mixin mediaMd{ //medium
+    @media screen and (max-width : 768px) {
+        @content;
+    }
+}
+@mixin mediaLg{ //large
+    @media screen and (min-width : 769px) and (max-width :1170px) {
+        @content;
+    }
+}
+@mixin mediaXl{ //extra large
+    @media screen and (min-width : 1171px)  {
+        @content;
+    }
+}
+
 //set text color
 @function set-text-color($color){
     @if (lightness($color) >40){

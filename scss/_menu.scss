@@ -85,7 +85,7 @@
             border: solid  3px $primary-color;
             border-radius: 50%;
         }
-    }
+    
     
     .nav-item{
         transform: translate3d(600px,0,0);
@@ -114,6 +114,7 @@
             color: $primary-color;
         }
     }
+}
 }
 
 //delay each nav item slide by 0.1s like 
