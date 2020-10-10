@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #C3AED6;
+    background: #e0e1e1;
     transition: all 0.5s ease-in-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -33,16 +33,17 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
     float: left;
     width: 50%;
     height: 100vh;
     overflow: hidden; }
   .menu-nav {
     margin: 0;
-    padding: 0;
-    background: rgba(34, 60, 53, 0.397);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.397);
     list-style: none;
+    font-size: 45px;
+    color: #0099ff;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-in-out; }
     .menu-nav.show {
@@ -57,73 +58,42 @@
       width: 250px;
       height: 250px;
       background: url("../imahe/man_hat_cmp.jpeg");
-      border: solid 3px rgba(199, 64, 105, 0.692);
+      border: solid 3px rgba(243, 82, 130, 0.692);
       border-radius: 50%; }
-    .menu-branding .nav-item {
-      transform: translate3d(600px, 0, 0);
-      transition: all 0.5s ease-in-out; }
-      .menu-branding .nav-item.show {
-        transform: translate3d(0, 0, 0); }
-      .menu-branding .nav-item.current > a {
-        color: rgba(199, 64, 105, 0.692); }
-    .menu-branding .nav-link {
-      display: inline-block;
-      position: relative;
-      font-size: 30px;
-      text-transform: uppercase;
-      padding: 1 rem 0;
-      font-weight: 300;
-      color: #fff;
-      text-decoration: none;
-      transition: all 0.5s ease-in-out; }
-      .menu-branding .nav-link:hover {
-        color: rgba(199, 64, 105, 0.692); }
+  .menu .menu-nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu .menu-nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .menu-nav-item.current > a {
+      color: rgba(243, 82, 130, 0.692); }
+  .menu .menu-nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1 rem 0;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out; }
+    .menu .menu-nav-link:hover {
+      color: rgba(243, 82, 130, 0.692); }
 
-.nav-item:nth-child(1) {
+.menu-nav-item:nth-child(1) {
   transition-delay: 0.1s; }
 
-.nav-item:nth-child(2) {
+.menu-nav-item:nth-child(2) {
   transition-delay: 0.2s; }
 
-.nav-item:nth-child(3) {
+.menu-nav-item:nth-child(3) {
   transition-delay: 0.3s; }
-
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 65vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-branding {
-    height: 35vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../imahe/man_hat_cmp.jpeg");
-      width: 225px;
-      height: 225px; } }
-
-@media screen and (max-width: 500px) {
-  mani#home h1 {
-    margin-top: 1 rem; } }
 
 * {
   box-sizing: border-box; }
 
 body {
-  background: rgba(199, 64, 105, 0.692);
+  background: rgba(243, 82, 130, 0.692);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   height: 100%;
@@ -162,17 +132,18 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #C3AED6; }
+  color: #8b89f5; }
   a:hover {
-    color: lightblue; }
+    color: white; }
 
 main {
   padding: 2rem;
-  height: 100%; }
+  min-height: calc( 100vh-60vh); }
   main .icons {
     margin-top: 4rem; }
     main .icons a {
-      padding: 0.4rem; }
+      padding: 0.4rem;
+      color: #8b89f5; }
       main .icons a:hover {
         color: rgba(27, 189, 135, 0.692);
         transition: all 0.5s ease-in-out; }
@@ -180,3 +151,87 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 18vh; }
+
+#about h2.sm-heading {
+  background: rgba(244, 92, 137, 0.2);
+  color: rgba(54, 145, 148, 0.788); }
+  #about h2.sm-headingspan {
+    color: crimson; }
+
+#about h1.lg-heading {
+  color: cadetblue; }
+
+#about.icons {
+  color: rosybrown; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio  bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  border-radius: 60%;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border: rgba(41, 60, 112, 0.062), 3px, solid; }
+
+.bio {
+  grid-area: bio; }
+
+.job-1 {
+  grid-area: job1; }
+
+.job-2 {
+  grid-area: job2; }
+
+.job-3 {
+  grid-area: job3; }
+
+.job {
+  background: rgba(245, 106, 147, 0.692);
+  padding: 0.5rem;
+  border-bottom: #f3607d 5px solid; }
+
+#main-footer {
+  text-align: center;
+  padding: 1 rem;
+  background: rgba(240, 34, 96, 0.692);
+  color: #8b89f5;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 65vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 35vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../imahe/man_hat_cmp.jpeg");
+      width: 225px;
+      height: 225px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3'; }
+  grid-template-columns: 1fr; }
+
+@media screen and (max-width: 500px) {
+  mani#home h1 {
+    margin-top: 1 rem; } }
