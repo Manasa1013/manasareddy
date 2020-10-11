@@ -152,17 +152,19 @@ main {
     main#home h1 {
       margin-top: 18vh; }
 
-#about h2.sm-heading {
-  background: rgba(244, 92, 137, 0.2);
-  color: rgba(54, 145, 148, 0.788); }
-  #about h2.sm-headingspan {
-    color: crimson; }
-
-#about h1.lg-heading {
-  color: cadetblue; }
-
-#about.icons {
-  color: rosybrown; }
+#about, #work {
+  overflow: hidden; }
+  #about h2.sm-heading, #work h2.sm-heading {
+    background: rgba(244, 92, 137, 0.2);
+    color: rgba(54, 145, 148, 0.788); }
+    #about h2.sm-headingspan, #work h2.sm-headingspan {
+      color: crimson; }
+  #about h1.lg-heading, #work h1.lg-heading {
+    color: cadetblue; }
+  #about h1, #work h1 {
+    margin-top: 10vh; }
+  #about.icons, #work.icons {
+    color: blanchedalmond; }
 
 .about-info {
   display: grid;
@@ -193,14 +195,51 @@ main {
 .job {
   background: rgba(245, 106, 147, 0.692);
   padding: 0.5rem;
-  border-bottom: #f3607d 5px solid; }
+  border-bottom: rgba(41, 60, 112, 0.062) 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #1F3C88 solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: rgba(244, 92, 137, 0.2);
+      transition: all 0.5s ease-in-out; }
+  .projects .btn, .projects .btn-dark, .projects .btn-light {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem; }
+    .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
+      background: #79b9b4;
+      color: black; }
+  .projects .btn-dark {
+    background: #0297a2;
+    color: #f5efef;
+    border-radius: 15%; }
 
 #main-footer {
   text-align: center;
   padding: 1 rem;
-  background: rgba(240, 34, 96, 0.692);
-  color: #8b89f5;
+  min-height: calc( 100vh-10vh);
+  background: #b72548;
+  color: #1f3c88;
+  font-weight: 750;
   height: 60px; }
+  #main-footer.icons {
+    margin: 15px 10rem; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -230,8 +269,12 @@ main {
       height: 225px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3'; }
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   mani#home h1 {
-    margin-top: 1 rem; } }
+    margin-top: 1 rem; }
+  .projects {
+    grid-template-columns: 1 fr; } }

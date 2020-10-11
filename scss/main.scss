@@ -67,26 +67,30 @@ main{
             margin-top: 18vh;
         }
     }
-}
 
-//about
-#about{ //for bringing same color onto h2 ele in about page
-    
-    h2.sm-heading{
-        background: rgba(lighten($primary-color ,2),0.2);
-        color: rgba(54, 145, 148, 0.788);
-        &span{
-            color: crimson;
-        }
-    }
-    h1.lg-heading{
-        color: cadetblue;
-    }
-    &.icons{
-    
-        color: rgb(188, 143, 143);
-    }
 }
+//about
+    #about,#work{ //for bringing same color onto h2 ele in about page
+        
+        h2.sm-heading{
+            background: rgba(lighten($primary-color ,2),0.2);
+            color: rgba(54, 145, 148, 0.788);
+            &span{
+                color: crimson;
+            }
+        }
+        h1.lg-heading{
+            color: cadetblue;
+        }
+        overflow: hidden;
+            h1{
+                margin-top: 10vh;
+            }
+            &.icons{
+                color: blanchedalmond;
+            }
+    }
+
 .about-info{
 
     display: grid;
@@ -119,14 +123,62 @@ main{
 .job{
     background : lighten($primary-color,5);
     padding: 0.5rem;
-    border-bottom: rgb(243, 96, 125) 5px solid;
+    border-bottom: $secondary-color 5px solid;
+}
+
+//work projects
+
+.projects{
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3,1fr);
+    img{
+        width: 100%;
+        border: 3px #1F3C88 solid ;
+        &:hover{
+            opacity: 0.5;
+            border-color : rgba(lighten($primary-color ,2),0.2);
+            @include easeOut;
+        }
+    }
+
+
+//button syles in work.html
+.btn{
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    &:hover{
+        background: lighten($color:#68B0AB , $amount: 5) ;
+        color: (black);
+    }
+}
+
+.btn-dark{
+    @extend .btn;
+    background: darken($color: #029ca7, $amount: 1);
+    color: #f5efef;
+    border-radius: 15%;
+
+}
+.btn-light{
+    @extend .btn;
+}
 }
 #main-footer{
     text-align: center;
+    
     padding: 1 rem;
-    background: darken($color: $primary-color, $amount: 10);
-    color: set-text-color($primary-color);
+    min-height: calc( 100vh-10vh );
+    background: darken($color: #d7385e, $amount: 10);
+    color: (#1f3c88);
+    font-weight: 750;
     height: 60px;
+    &.icons{
+        margin: 15px 10rem;
+    }
 }
 
 @import 'mobile';
