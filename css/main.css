@@ -1,0 +1,280 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #e0e1e1;
+    transition: all 0.5s ease-in-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(315deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.397);
+    list-style: none;
+    font-size: 45px;
+    color: #0099ff;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    transform: translate3d(0, 100%, 0);
+    background-color: rgba(65, 116, 102, 0.397);
+    transition: all 0.5s ease-in-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../imahe/man_hat_cmp.jpeg");
+      border: solid 3px rgba(243, 82, 130, 0.692);
+      border-radius: 50%; }
+  .menu .menu-nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu .menu-nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .menu-nav-item.current > a {
+      color: rgba(243, 82, 130, 0.692); }
+  .menu .menu-nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1 rem 0;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out; }
+    .menu .menu-nav-link:hover {
+      color: rgba(243, 82, 130, 0.692); }
+
+.menu-nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.menu-nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.menu-nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: rgba(243, 82, 130, 0.692);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  height: 100%;
+  margin: 0%;
+  color: #e0e1e1; }
+  body#bg-img {
+    background: url(../imahe/piano_portfolio2.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(65, 116, 102, 0.7); }
+
+h1,
+h2,
+h3 {
+  margin: 2px;
+  font-weight: 500; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 5rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    font-size: 2rem;
+    margin-bottom: 0;
+    padding: 0.2rem 1rem;
+    background: rgba(69, 123, 108, 0.2); }
+
+a {
+  text-decoration: none;
+  color: #8b89f5; }
+  a:hover {
+    color: white; }
+
+main {
+  padding: 2rem;
+  min-height: calc( 100vh-60vh); }
+  main .icons {
+    margin-top: 4rem; }
+    main .icons a {
+      padding: 0.4rem;
+      color: #8b89f5; }
+      main .icons a:hover {
+        color: rgba(27, 189, 135, 0.692);
+        transition: all 0.5s ease-in-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 18vh; }
+
+#about, #work {
+  overflow: hidden; }
+  #about h2.sm-heading, #work h2.sm-heading {
+    background: rgba(244, 92, 137, 0.2);
+    color: rgba(54, 145, 148, 0.788); }
+    #about h2.sm-headingspan, #work h2.sm-headingspan {
+      color: crimson; }
+  #about h1.lg-heading, #work h1.lg-heading {
+    color: cadetblue; }
+  #about h1, #work h1 {
+    margin-top: 10vh; }
+  #about.icons, #work.icons {
+    color: blanchedalmond; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio  bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  border-radius: 60%;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border: rgba(41, 60, 112, 0.062), 3px, solid; }
+
+.bio {
+  grid-area: bio; }
+
+.job-1 {
+  grid-area: job1; }
+
+.job-2 {
+  grid-area: job2; }
+
+.job-3 {
+  grid-area: job3; }
+
+.job {
+  background: rgba(245, 106, 147, 0.692);
+  padding: 0.5rem;
+  border-bottom: rgba(41, 60, 112, 0.062) 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #1F3C88 solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: rgba(244, 92, 137, 0.2);
+      transition: all 0.5s ease-in-out; }
+  .projects .btn, .projects .btn-dark, .projects .btn-light {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem; }
+    .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
+      background: #79b9b4;
+      color: black; }
+  .projects .btn-dark {
+    background: #0297a2;
+    color: #f5efef;
+    border-radius: 15%; }
+
+#main-footer {
+  text-align: center;
+  padding: 1 rem;
+  min-height: calc( 100vh-10vh);
+  background: #b72548;
+  color: #1f3c88;
+  font-weight: 750;
+  height: 60px; }
+  #main-footer.icons {
+    margin: 15px 10rem; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 65vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 35vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../imahe/man_hat_cmp.jpeg");
+      width: 225px;
+      height: 225px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3'; }
+  grid-template-columns: 1fr;
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  mani#home h1 {
+    margin-top: 1 rem; }
+  .projects {
+    grid-template-columns: 1 fr; } }
